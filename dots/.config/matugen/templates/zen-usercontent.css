@@ -245,3 +245,41 @@
     color: var(--text-color) !important;
   }
 }
+
+/* Expose HyprGlass behind the root canvas of regular websites. */
+@-moz-document url-prefix("http://"), url-prefix("https://") {
+  :root,
+  html,
+  body,
+  #root,
+  #app,
+  #__next {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
+
+/* Google paints additional full-page and search-box backgrounds. */
+@-moz-document domain("google.com") {
+  :root,
+  html,
+  body,
+  #main,
+  #cnt,
+  #rcnt,
+  #searchform,
+  .sfbg,
+  .minidiv .sfbg {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .A8SBwf,
+  .RNNXgb,
+  .aajZCb {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: color-mix(in srgb, {{colors.outline.default.hex}} 65%, transparent) !important;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 20%) !important;
+  }
+}
