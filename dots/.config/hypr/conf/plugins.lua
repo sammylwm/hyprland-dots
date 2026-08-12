@@ -39,3 +39,37 @@ if hl.plugin.hyprglass then
 	hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, tag = "+hyprglass_preset_glass" })
 	hl.window_rule({ match = { class = "zen" }, tag = "+hyprglass_preset_glass" })
 end
+
+if hl.plugin.hyprexpo then
+	hl.define_submap("hyprexpo", function()
+		hl.bind("left", function()
+			hl.plugin.hyprexpo.kb_focus("left")
+		end)
+		hl.bind("right", function()
+			hl.plugin.hyprexpo.kb_focus("right")
+		end)
+		hl.bind("up", function()
+			hl.plugin.hyprexpo.kb_focus("up")
+		end)
+		hl.bind("down", function()
+			hl.plugin.hyprexpo.kb_focus("down")
+		end)
+
+		hl.bind("return", function()
+			hl.plugin.hyprexpo.kb_confirm()
+		end)
+		hl.bind("escape", function()
+			hl.plugin.hyprexpo.expo("cancel")
+		end)
+		hl.bind("SUPER + G", function()
+			hl.plugin.hyprexpo.expo("toggle")
+		end)
+
+		-- Блокируем ввод в приложение под обзором.
+		hl.bind("mouse_up", function() end)
+		hl.bind("mouse_down", function() end)
+		hl.bind("mouse_left", function() end)
+		hl.bind("mouse_right", function() end)
+		hl.bind("catchall", function() end)
+	end)
+end

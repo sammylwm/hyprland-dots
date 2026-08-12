@@ -113,7 +113,9 @@ echo "Done."
 
 echo "Installing hyprland depends"
 hyprpm add https://github.com/hyprnux/hyprglass || true
-hyprpm enable hyprglass
+hyprpm enable hyprglass || true
+hyprpm add https://github.com/sandwichfarm/hyprexpo
+hyprpm enable hyprexpo || true
 
 echo "Replacing conflicting config files and links..."
 remove_stow_conflicts "$DOTS_DIR" "$HOME"
