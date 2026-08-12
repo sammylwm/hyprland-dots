@@ -37,4 +37,5 @@ if hl.plugin.hyprglass then
 	hg.config({ layers = { enabled = true } })
 	hg.layer("quickshell:bezel", { preset = "ui", mask_threshold = 0.3 })
 	hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, tag = "+hyprglass_preset_glass" })
+	hl.window_rule({ match = { class = "zen" }, tag = "+hyprglass_preset_glass" })
 end
