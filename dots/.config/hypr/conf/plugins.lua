@@ -33,4 +33,8 @@ if hl.plugin.hyprglass then
 		adaptive_dim = 1.5,
 		dark = { tint_color = 0x02142aa9 },
 	})
+
+	hg.config({ layers = { enabled = true } })
+	hg.layer("quickshell:bezel", { preset = "ui", mask_threshold = 0.3 })
+	hl.window_rule({ match = { class = "com.mitchellh.ghostty" }, tag = "+hyprglass_preset_glass" })
 end
