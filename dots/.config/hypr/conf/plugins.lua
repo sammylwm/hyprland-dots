@@ -41,6 +41,17 @@ if hl.plugin.hyprglass then
 end
 
 if hl.plugin.hyprexpo then
+	hl.config({
+		plugin = {
+			hyprexpo = {
+				dynamic_grid = 1,
+				skip_empty = 1,
+				fill_gaps = 0,
+				mru_sort = 0,
+			},
+		},
+	})
+
 	hl.define_submap("hyprexpo", function()
 		hl.bind("left", function()
 			hl.plugin.hyprexpo.kb_focus("left")

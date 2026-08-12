@@ -79,10 +79,12 @@ bind.add("Print", hl.dsp.exec_cmd("hyprshot -m region"))
 
 -- === Mouse ===
 bind.add("ALT + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.gesture({
-	fingers = 3,
-	direction = "vertical",
-	action = function()
-		hl.plugin.hyprexpo.expo("toggle")
-	end,
-})
+if hl.plugin.hyprexpo then
+	for _, direction in ipairs({ "up", "down" }) do
+		hl.plugin.hyprexpo.gesture({
+			fingers = 3,
+			direction = direction,
+			action = "expo",
+		})
+	end
+end
