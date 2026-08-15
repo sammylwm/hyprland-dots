@@ -1,7 +1,7 @@
 local bind = require("conf.functions")
 
 for i = 1, 9 do
-	bind.add("super + " .. i, hl.dsp.focus({ workspace = i }))
+	bind.add("super + " .. i, hl.dsp.focus({ workspace = i }), { dont_inhibit = true })
 	bind.add("super + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
